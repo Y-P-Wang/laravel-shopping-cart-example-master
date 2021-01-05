@@ -3,8 +3,8 @@
 @section('content')
 
     <div class="container">
-        <p><a href="{{ url('shop') }}">Home</a> / Wishlist</p>
-        <h1>Your Wishlist</h1>
+        <p><a href="{{ url('shop') }}">首頁</a> / 願望清單</p>
+        <h1>你的願望清單</h1>
 
         <hr>
 
@@ -26,9 +26,9 @@
                 <thead>
                     <tr>
                         <th class="table-image"></th>
-                        <th>Product</th>
+                        <th>產品</th>
 
-                        <th>Price</th>
+                        <th>價格</th>
                         <th class="column-spacer"></th>
                         <th></th>
                     </tr>
@@ -46,12 +46,12 @@
                             <form action="{{ url('wishlist', [$item->rowId]) }}" method="POST" class="side-by-side">
                                 {!! csrf_field() !!}
                                 <input type="hidden" name="_method" value="DELETE">
-                                <input type="submit" class="btn btn-danger btn-sm" value="Remove">
+                                <input type="submit" class="btn btn-danger btn-sm" value="移除">
                             </form>
 
                             <form action="{{ url('switchToCart', [$item->rowId]) }}" method="POST" class="side-by-side">
                                 {!! csrf_field() !!}
-                                <input type="submit" class="btn btn-success btn-sm" value="To Cart">
+                                <input type="submit" class="btn btn-success btn-sm" value="移至購物車">
                             </form>
                         </td>
                     </tr>
@@ -62,20 +62,20 @@
 
             <div class="spacer"></div>
 
-            <a href="/shop" class="btn btn-primary btn-lg">Continue Shopping</a> &nbsp;
+            <a href="/shop" class="btn btn-primary btn-lg">繼續購物</a> &nbsp;
 
             <div style="float:right">
                 <form action="{{ url('/emptyWishlist') }}" method="POST">
                     {!! csrf_field() !!}
                     <input type="hidden" name="_method" value="DELETE">
-                    <input type="submit" class="btn btn-danger btn-lg" value="Empty Wishlist">
+                    <input type="submit" class="btn btn-danger btn-lg" value="清除全部願望清單">
                 </form>
             </div>
 
         @else
 
-            <h3>You have no items in your Wishlist</h3>
-            <a href="/shop" class="btn btn-primary btn-lg">Continue Shopping</a>
+            <h3>您的願望清單中沒有任何物品</h3>
+            <a href="/shop" class="btn btn-primary btn-lg">繼續購物</a>
 
         @endif
 

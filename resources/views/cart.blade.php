@@ -3,8 +3,8 @@
 @section('content')
 
     <div class="container">
-        <p><a href="{{ url('shop') }}">Home</a> / Cart</p>
-        <h1>Your Cart</h1>
+        <p><a href="{{ url('shop') }}">首頁</a> / 購物車</p>
+        <h1>您的購物車</h1>
 
         <hr>
 
@@ -26,9 +26,9 @@
                 <thead>
                     <tr>
                         <th class="table-image"></th>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
+                        <th>產品</th>
+                        <th>數量</th>
+                        <th>價格</th>
                         <th class="column-spacer"></th>
                         <th></th>
                     </tr>
@@ -54,12 +54,12 @@
                             <form action="{{ url('cart', [$item->rowId]) }}" method="POST" class="side-by-side">
                                 {!! csrf_field() !!}
                                 <input type="hidden" name="_method" value="DELETE">
-                                <input type="submit" class="btn btn-danger btn-sm" value="Remove">
+                                <input type="submit" class="btn btn-danger btn-sm" value="移除">
                             </form>
 
                             <form action="{{ url('switchToWishlist', [$item->rowId]) }}" method="POST" class="side-by-side">
                                 {!! csrf_field() !!}
-                                <input type="submit" class="btn btn-success btn-sm" value="To Wishlist">
+                                <input type="submit" class="btn btn-success btn-sm" value="移至願望清單">
                             </form>
                         </td>
                     </tr>
@@ -68,7 +68,7 @@
                     <tr>
                         <td class="table-image"></td>
                         <td></td>
-                        <td class="small-caps table-bg" style="text-align: right">Subtotal</td>
+                        <td class="small-caps table-bg" style="text-align: right">小計</td>
                         <td>${{ Cart::instance('default')->subtotal() }}</td>
                         <td></td>
                         <td></td>
@@ -76,7 +76,7 @@
                     <tr>
                         <td class="table-image"></td>
                         <td></td>
-                        <td class="small-caps table-bg" style="text-align: right">Tax</td>
+                        <td class="small-caps table-bg" style="text-align: right">稅</td>
                         <td>${{ Cart::instance('default')->tax() }}</td>
                         <td></td>
                         <td></td>
@@ -85,7 +85,7 @@
                     <tr class="border-bottom">
                         <td class="table-image"></td>
                         <td style="padding: 40px;"></td>
-                        <td class="small-caps table-bg" style="text-align: right">Your Total</td>
+                        <td class="small-caps table-bg" style="text-align: right">您的總數</td>
                         <td class="table-bg">${{ Cart::total() }}</td>
                         <td class="column-spacer"></td>
                         <td></td>
@@ -94,21 +94,21 @@
                 </tbody>
             </table>
 
-            <a href="{{ url('/shop') }}" class="btn btn-primary btn-lg">Continue Shopping</a> &nbsp;
-            <a href="#" class="btn btn-success btn-lg">Proceed to Checkout</a>
+            <a href="{{ url('/shop') }}" class="btn btn-primary btn-lg">繼續購物</a> &nbsp;
+            <a href="#" class="btn btn-success btn-lg">結帳</a>
 
             <div style="float:right">
                 <form action="{{ url('/emptyCart') }}" method="POST">
                     {!! csrf_field() !!}
                     <input type="hidden" name="_method" value="DELETE">
-                    <input type="submit" class="btn btn-danger btn-lg" value="Empty Cart">
+                    <input type="submit" class="btn btn-danger btn-lg" value="清空購物車">
                 </form>
             </div>
 
         @else
 
-            <h3>You have no items in your shopping cart</h3>
-            <a href="{{ url('/shop') }}" class="btn btn-primary btn-lg">Continue Shopping</a>
+            <h3>您的購物車中沒有商品</h3>
+            <a href="{{ url('/shop') }}" class="btn btn-primary btn-lg">繼續購物</a>
 
         @endif
 

@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="container">
-        <p><a href="{{ url('/shop') }}">Shop</a> / {{ $product->name }}</p>
+        <p><a href="{{ url('/shop') }}">商店</a> / {{ $product->name }}</p>
         <h1>{{ $product->name }}</h1>
 
         <hr>
@@ -20,7 +20,7 @@
                     <input type="hidden" name="id" value="{{ $product->id }}">
                     <input type="hidden" name="name" value="{{ $product->name }}">
                     <input type="hidden" name="price" value="{{ $product->price }}">
-                    <input type="submit" class="btn btn-success btn-lg" value="Add to Cart">
+                    <input type="submit" class="btn btn-info" value="加入購物車">
                 </form>
 
                 <form action="{{ url('/wishlist') }}" method="POST" class="side-by-side">
@@ -28,7 +28,7 @@
                     <input type="hidden" name="id" value="{{ $product->id }}">
                     <input type="hidden" name="name" value="{{ $product->name }}">
                     <input type="hidden" name="price" value="{{ $product->price }}">
-                    <input type="submit" class="btn btn-primary btn-lg" value="Add to Wishlist">
+                    <input type="submit" class="btn btn-warning" value="加入願望清單">
                 </form>
 
 
@@ -41,7 +41,7 @@
         <div class="spacer"></div>
 
         <div class="row">
-            <h3>You may also like...</h3>
+            <h3>你可能也喜歡...</h3>
 
             @foreach ($interested as $product)
                 <div class="col-md-3">

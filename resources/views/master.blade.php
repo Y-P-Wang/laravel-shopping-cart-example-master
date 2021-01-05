@@ -56,18 +56,18 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="{{ url('/') }}">Laravel Shopping Cart Example</a>
+              <a class="navbar-brand" href="{{ url('/') }}">IM JUNIOR服飾店</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="{{ set_active('shop') }}"><a href="{{ url('/') }}">Home/Shop</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li class="{{ set_active('shop') }}"><a href="{{ url('/') }}">首頁/商店</a></li>
+                <li><a href="#">關於</a></li>
+                <li><a href="#">聯繫</a></li>
 
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                <li class="{{ set_active('wishlist') }}"><a href="{{ url('/wishlist') }}">Wishlist ({{ Cart::instance('wishlist')->count(false) }})</a></li>
-                <li class="{{ set_active('cart') }}"><a href="{{ url('/cart') }}">Cart ({{ Cart::instance('default')->count(false) }})</a></li>
+                <li class="{{ set_active('wishlist') }}"><a href="{{ url('/wishlist') }}">願望清單 ({{ Cart::instance('wishlist')->count(false) }})</a></li>
+                <li class="{{ set_active('cart') }}"><a href="{{ url('/cart') }}">購物車 ({{ Cart::instance('default')->count(false) }})</a></li>
               </ul>
             </div><!--/.nav-collapse -->
           </div>
@@ -79,7 +79,7 @@
 
     <footer>
       <div class="container">
-        <p class="text-muted">By <a href="http://andremadarang.com">Andre Madarang</a></p>
+        <p class="text-muted">By <a href="http://andremadarang.com"></a>CJCU IM</p>
       </div>
     </footer>
 
